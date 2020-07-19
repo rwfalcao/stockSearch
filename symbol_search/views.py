@@ -2,10 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from symbol_search.models import Stock
 from django.core.paginator import Paginator
-
+from django.utils.translation import activate
 
 
 def index(request):
+    activate('pt')
+
     stocks = Stock.objects.all()
     paginator = Paginator(stocks, 10)
     current_page = request.GET.get('page')

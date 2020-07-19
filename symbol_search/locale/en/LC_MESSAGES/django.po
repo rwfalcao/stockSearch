@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-19 20:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/symbol_list.html:26
+msgid "Symbol"
+msgstr "Symbol"
+
+#: templates/symbol_list.html:27
+msgid "Description"
+msgstr "Description"
+
+#: templates/symbol_list.html:28
+msgid "Last sale value"
+msgstr "Last sale value"
+
+#: templates/symbol_list.html:29
+msgid "Market Cap"
+msgstr "Market Cap"
+
+#: templates/symbol_list.html:30
+msgid "IPO Year"
+msgstr "IPO Year"

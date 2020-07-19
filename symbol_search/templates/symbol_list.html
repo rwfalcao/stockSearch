@@ -1,8 +1,10 @@
 {% extends super_template %}
 {% load static %}
-
+{% load i18n %}
 
 {% block content %}
+    {% get_available_languages as LANGUAGES %}
+
 
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
@@ -21,11 +23,11 @@
     <table class="centered highlight stock-symbol-table">
         <thead>
           <tr>
-              <th>Symbol</th>
-              <th>Description</th>
-              <th>Last sale value</th>
-              <th>Market Cap</th>
-              <th>IPO Year</th>
+              <th>{% trans 'Symbol' %}</th>
+              <th>{% trans 'Description' %}</th>
+              <th>{% trans 'Last sale value' %}</th>
+              <th>{% trans 'Market Cap' %}</th>
+              <th>{% trans 'IPO Year' %}</th>
               <th>Nasdaq</th>
           </tr>
         </thead>
