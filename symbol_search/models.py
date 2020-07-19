@@ -29,6 +29,7 @@ class Stock(models.Model):
 
     ipo_year = models.IntegerField(
         'IPO Year',
+        null=True, blank=True
         )
 
     nasdaq_url = models.URLField()

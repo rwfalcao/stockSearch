@@ -26,36 +26,37 @@
               <th>Last sale value</th>
               <th>Market Cap</th>
               <th>IPO Year</th>
-              <th>Nasdaq link</th>
+              <th>Nasdaq</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-            <td>$0.87</td>
-            <td>$0.87</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-            <td>$3.76</td>
-            <td>$3.76</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            <td>$7.00</td>
-            <td>$7.00</td>
-            <td>$3.76</td>
-          </tr>
+            {% for stock in page %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.last_sale }}</td>
+                    <td>{{ stock.market_cap }}</td>
+                    <td>{{ stock.ipo_year }}</td>
+                    <td><a target="_blank" href="{{ stock.nasdaq_url }}">Link</a></td>
+                </tr>
+            {% endfor %}
         </tbody>
       </table>
+
+      <div class="pagination-container">
+        <ul class="pagination">
+            {% if page.has_previous %}
+                <li class=" waves-effect {% if not page.has_previous %} disabled {% endif %}"><a href="?page={{ page.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+            {% else %}
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            {% endif %}
+            {% for page_num in page_range %}
+                <li {% if page_num == current_page %} class="active" {% endif %} ><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                
+            {% endfor %}
+            <li class="waves-effect {% if not page.has_next %} disabled {% endif %}"><a href="?page={{ page.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+          </ul>
+      </div>
 
 {% endblock %}
