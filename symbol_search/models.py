@@ -16,21 +16,20 @@ class Stock(models.Model):
         )
 
     last_sale = models.DecimalField(
-        'Last sale value'
+        'Last sale value',
         max_digits=12, 
         decimal_places=2
         )
 
     market_cap = models.DecimalField(
-        'Market Cap'
+        'Market Cap',
         max_digits=12, 
         decimal_places=2
         )
 
     ipo_year = models.IntegerField(
-        'IPO Year'
-        max_value=3000
+        'IPO Year',
         )
 
-    nasdaq_url models.URLField()
+    nasdaq_url = models.URLField()
 
