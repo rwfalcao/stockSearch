@@ -15,7 +15,7 @@
             <form id="stock-search-input" method="POST" >
                 {% csrf_token %}
                 <div class="input-field">
-                <input name="search-string" id="search" type="search">
+                <input name="search-string" id="search" type="search" autocomplete="off" placeholder="{% trans 'Search stocks by Name or Description' %}">
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
                 </div>
@@ -28,7 +28,7 @@
           <tr>
               <th>{% trans 'Symbol' %}</th>
               <th>{% trans 'Description' %}</th>
-              <th>{% trans 'Last sale value' %}</th>
+              <th>{% trans 'Last Sale Value' %}</th>
               <th>{% trans 'Market Cap' %}</th>
               <th>{% trans 'IPO Year' %}</th>
               <th>Nasdaq</th>

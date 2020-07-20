@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 15:25+0000\n"
+"POT-Creation-Date: 2020-07-20 15:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/symbol_list.html:18
+msgid "Search stocks by Name or Description"
+msgstr "Busque ações por Sigla ou Nome"
 
 #: templates/symbol_list.html:29
 msgid "Symbol"
@@ -27,8 +31,8 @@ msgid "Description"
 msgstr "Nome"
 
 #: templates/symbol_list.html:31
-msgid "Last sale value"
-msgstr "Valor de venda mais recente"
+msgid "Last Sale Value"
+msgstr "Valor de Venda Mais Recente"
 
 #: templates/symbol_list.html:32
 msgid "Market Cap"
@@ -38,14 +42,14 @@ msgstr "Capitalização de Mercado"
 msgid "IPO Year"
 msgstr "Ano IPO"
 
-#: templates/symbol_list.html:56
+#: templates/symbol_list.html:57
 msgid "No stocks matching your search."
 msgstr "Nenhuma ação encontrada com a sua busca."
 
-#: templates/symbol_list.html:69
+#: templates/symbol_list.html:71
 msgid "Page"
 msgstr "Página"
 
-#: templates/symbol_list.html:69
+#: templates/symbol_list.html:71
 msgid "of"
 msgstr "de"

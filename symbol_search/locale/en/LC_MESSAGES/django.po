@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-19 20:58+0000\n"
+"POT-Creation-Date: 2020-07-20 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,22 +18,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/symbol_list.html:26
+#: templates/symbol_list.html:18
+msgid "Search stocks by Name or Description"
+msgstr ""
+
+#: templates/symbol_list.html:29
 msgid "Symbol"
 msgstr "Symbol"
 
-#: templates/symbol_list.html:27
+#: templates/symbol_list.html:30
 msgid "Description"
 msgstr "Description"
 
-#: templates/symbol_list.html:28
-msgid "Last sale value"
+#: templates/symbol_list.html:31
+#, fuzzy
+#| msgid "Last sale value"
+msgid "Last Sale Value"
 msgstr "Last sale value"
 
-#: templates/symbol_list.html:29
+#: templates/symbol_list.html:32
 msgid "Market Cap"
 msgstr "Market Cap"
 
-#: templates/symbol_list.html:30
+#: templates/symbol_list.html:33
 msgid "IPO Year"
 msgstr "IPO Year"
+
+#: templates/symbol_list.html:57
+msgid "No stocks matching your search."
+msgstr ""
+
+#: templates/symbol_list.html:71
+msgid "Page"
+msgstr ""
+
+#: templates/symbol_list.html:71
+msgid "of"
+msgstr ""
