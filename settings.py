@@ -25,7 +25,7 @@ SECRET_KEY = '5%!30=h*+0-dwjwmplyb99hf^i88wgma8k2pu*uiwnl5$%w&1a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'symbolsearch.herokuapp.com']
 
 
 # Application definition
