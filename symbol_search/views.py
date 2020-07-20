@@ -11,8 +11,8 @@ def index(request):
     activate('pt')
 
     stocks = Stock.objects.all()
-    if request.method == 'POST' and request.POST.get('search-string'):
-        search_str = request.POST.get('search-string')
+    search_str = request.GET.get('search-string')
+    if search_str:
         stocks = stocks.filter(
             Q(symbol__icontains=search_str) | 
             Q(name__icontains=search_str)
@@ -23,10 +23,10 @@ def index(request):
     page_obj = paginator.get_page(current_page)
 
     context = {
-        'stocks': stocks,
         'current_page': int(current_page),
         'page': page_obj,
-        'page_range': range(1, page_obj.paginator.num_pages)
+        'page_range': range(1, page_obj.paginator.num_pages),
+        'search_str': search_str
     }
 
     return render(request, 'symbol_list.html', context)
