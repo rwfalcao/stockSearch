@@ -10,9 +10,10 @@
 
     <nav class="symbol-search-nav">
         <div class="nav-wrapper blue-grey darken-2">
-            <form>
+            <form id="stock-search-input" method="POST" >
+                {% csrf_token %}
                 <div class="input-field">
-                <input id="search" type="search" required>
+                <input name="search-string" id="search" type="search" required>
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
                 </div>
@@ -57,8 +58,17 @@
                 <li {% if page_num == current_page %} class="active" {% endif %} ><a href="?page={{ page_num }}">{{ page_num }}</a></li>
                 
             {% endfor %}
-            <li class="waves-effect {% if not page.has_next %} disabled {% endif %}"><a href="?page={{ page.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+            {% if page.has_previous %} 
+                <li class="waves-effect {% if not page.has_next %} disabled {% endif %}"><a href="?page={{ page.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+            {% else %}
+                <li class="waves-effect disabled "><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            {% endif %}
           </ul>
       </div>
+
+    {% include "includes/loading.html" %}
+
+    <script src="{% static 'js/stockList.js' %}"></script>
+
 
 {% endblock %}
