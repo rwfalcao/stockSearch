@@ -6,7 +6,10 @@ from django.utils.translation import activate
 from django.db.models import Q
 
 
+
 def index(request):
+    from django.core.management import call_command
+    call_command('populate_stock_list')
     activate('pt')
 
     stocks = Stock.objects.all()

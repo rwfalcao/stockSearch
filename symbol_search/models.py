@@ -17,13 +17,13 @@ class Stock(models.Model):
 
     last_sale = models.DecimalField(
         'Last sale value',
-        max_digits=12, 
+        max_digits=20, 
         decimal_places=2
         )
 
     market_cap = models.DecimalField(
         'Market Cap',
-        max_digits=12, 
+        max_digits=20, 
         decimal_places=2
         )
 
