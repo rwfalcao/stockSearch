@@ -9,3 +9,6 @@ table.stock-symbol-table {
     justify-content: center;
     margin-top: 2%;
 }
+.emtpy-table{
+    font-size: 1.3em;;
+}

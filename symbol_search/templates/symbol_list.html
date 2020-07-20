@@ -1,6 +1,8 @@
 {% extends super_template %}
 {% load static %}
 {% load i18n %}
+{% load humanize %}
+
 
 {% block content %}
     {% get_available_languages as LANGUAGES %}
@@ -13,7 +15,7 @@
             <form id="stock-search-input" method="POST" >
                 {% csrf_token %}
                 <div class="input-field">
-                <input name="search-string" id="search" type="search" required>
+                <input name="search-string" id="search" type="search">
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
                 </div>
@@ -38,10 +40,22 @@
                 <tr>
                     <td>{{ stock.symbol }}</td>
                     <td>{{ stock.name }}</td>
-                    <td>{{ stock.last_sale }}</td>
-                    <td>{{ stock.market_cap }}</td>
-                    <td>{{ stock.ipo_year }}</td>
+                    <td>U$ {{ stock.last_sale|floatformat:2 }}</td>
+                    <td>U$ {{ stock.market_cap|floatformat:2 }}</td>
+                    <td>
+                        {% if stock.ipo_year %}
+                            {{ stock.ipo_year }}
+                        {% else %}
+                            -                            
+                        {% endif %}
+                    </td>
                     <td><a target="_blank" href="{{ stock.nasdaq_url }}">Link</a></td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">
+                        <p class="emtpy-table">{% trans 'No stocks matching your search.' %}</p>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -55,7 +69,7 @@
                 <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
             {% endif %}
                 <li>{% trans 'Page' %} {{ current_page }} {% trans 'of' %} {{ page.paginator.num_pages }}</li>
-            {% if page.has_previous %} 
+            {% if page.has_next %} 
                 <li class="waves-effect {% if not page.has_next %} disabled {% endif %}"><a href="?page={{ page.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
             {% else %}
                 <li class="waves-effect disabled "><a href="#!"><i class="material-icons">chevron_right</i></a></li>
