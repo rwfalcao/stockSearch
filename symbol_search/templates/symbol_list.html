@@ -54,10 +54,7 @@
             {% else %}
                 <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
             {% endif %}
-            {% for page_num in page_range %}
-                <li {% if page_num == current_page %} class="active" {% endif %} ><a href="?page={{ page_num }}">{{ page_num }}</a></li>
-                
-            {% endfor %}
+                <li>{% trans 'Page' %} {{ current_page }} {% trans 'of' %} {{ page.paginator.num_pages }}</li>
             {% if page.has_previous %} 
                 <li class="waves-effect {% if not page.has_next %} disabled {% endif %}"><a href="?page={{ page.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
             {% else %}
